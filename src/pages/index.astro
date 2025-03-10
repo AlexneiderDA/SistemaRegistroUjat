@@ -1,11 +1,22 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import LoginLayout from '../layouts/LoginLayout.astro';
+import LoginForm from '../components/LoginForm';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<LoginLayout title="Login | Your App">
+  <div class="flex min-h-screen items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="w-full max-w-md space-y-8">
+      <div class="text-center">
+        <img class="mx-auto h-12 w-auto" src="/src/assets/logo.svg" alt="Your Logo" />
+        <h2 class="mt-6 text-3xl font-bold tracking-tight text-gray-900">
+          Sign in to your account
+        </h2>
+        <p class="mt-2 text-sm text-gray-600">
+          Or <a href="/register" class="font-medium text-indigo-600 hover:text-indigo-500">create a new account</a>
+        </p>
+      </div>
+      <LoginForm client:load />
+    </div>
+  </div>
+</LoginLayout>
+
